@@ -20,7 +20,6 @@ for (let  i = 0; i <banner.length; i++) {
     //购物车
     let car=document.getElementsByClassName("head_car")[0]
     let carbox=document.getElementsByClassName("head_car-box")[0]
-    console.log(carbox);
     car.onmouseenter=function () {
         carbox.style.height="98px";
         carbox.style.boxShadow="0 3px 1px 1px rgba(0,0,0,0.4)";
@@ -36,8 +35,6 @@ for (let  i = 0; i <banner.length; i++) {
     let banner=document.getElementById("banner");
     let lis=banner.getElementsByTagName("li");
     let bannerNav=document.getElementsByClassName("bannerNav");
-    console.log(bannerNav);
-    console.log(lis);
     for(let i=0;i<lis.length;i++){
         lis[i].onmouseenter=function () {
             bannerNav[i].style.display="block";
@@ -82,8 +79,6 @@ for (let  i = 0; i <banner.length; i++) {
     // let navWenzi=nav.getElementsByClassName("nav-wenzi")
     let spann=nav.getElementsByClassName("nav_wenzi-span")
     let navHover=nav.getElementsByClassName("nav-hover")
-    console.log(spann);
-    console.log(navHover);
     for(let i=0;i<spann.length-2;i++){
         for(let j=0;j<spann.length-2;j++){
             // navHover[j].style.display="none";
@@ -92,11 +87,56 @@ for (let  i = 0; i <banner.length; i++) {
         spann[i].onmouseenter=function () {
             // navHover[i].style.display="block";
             navHover[i].style.height="228px";
-
+            nav.style.borderBottom= "1px solid #e0e0e0";
         }
         spann[i].onmouseleave=function () {
             // navHover[i].style.display="none";
             navHover[i].style.height="0";
-
+            nav.style.borderBottom= "1px solid #fff";
         }
+    }
+
+    let bannerImg=document.getElementsByClassName("banner_img")[0]
+    let ol=bannerImg.getElementsByTagName("img");
+    let left=banner.getElementsByClassName("banner_lbtn")[0];
+    let right=banner.getElementsByClassName("banner_rbtn")[0];
+    //控制下标
+    let num=0;
+    //随着瞬间移动/变化
+    let mi=setInterval(move,2000)
+
+    banner.onmouseenter=function () {
+        clearInterval(mi)
+    }
+    banner.onmouseleave=function () {
+        mi=setInterval(move,2000);
+    }
+    //箭头点击效果
+    left.onclick=function () {
+        move1();
+    }
+    right.onclick=function () {
+        move();
+    }
+    //顺序移动
+    function move() {
+        num++;
+        if(num==ol.length){
+            num=0;
+        }
+        for(let i=0;i<ol.length;i++){
+            ol[i].style.zIndex="5";
+        }
+        ol[num].style.zIndex="10";
+    }
+    //倒着移动
+    function move1() {
+        num--;
+        if(num<0){
+            num=ol.length-1;
+        }
+        for(let i=0;i<ol.length;i++){
+            ol[i].style.zIndex="5";
+        }
+        ol[num].style.zIndex="10";
     }

@@ -112,13 +112,14 @@
 	/*height: 228px;*/
 	height: 0;
 	position: absolute;
-	top:100px;
+	top:101px;
 	left:-270px;
-	z-index: 30;
-	border-top: 1px solid #e0e0e0;
+	z-index: 40;
+	/*border-top: 1px solid #fff;*/
+	box-sizing: border-box;
 	background-color: #fff;
 	overflow: hidden;
-	transition: all 1s;
+	transition: all .5s;
 }
 .nav-hoverbox{
 	 width: 205px;
@@ -1214,7 +1215,7 @@
 #banner{
 	width: 1226px;
 	height: 460px;
-	background-color: pink;
+	/*background-color: pink;*/
 	margin: 0 auto;
 	position: relative;
 }
@@ -1259,9 +1260,13 @@
 .banner_img{
 	width: 100%;
 	height: 100%;
-	background-color: green;
+	/*background-color: green;*/
 	position: relative;
 }
+/*.banner_img ol{*/
+	/*position: relative;*/
+	/*z-index: 5;*/
+/*}*/
 .banner_img img{
 	width: 100%;
 	height: 100%;
@@ -1279,6 +1284,7 @@
 	left: 0;
 	padding: 20px 0;
 	cursor:pointer;
+	z-index: 30;
 }
 .banner_nav li{
 	width: 174px;
@@ -1308,6 +1314,7 @@
 	bottom: 0;
 	margin:auto;
 	cursor:pointer;
+	z-index: 20;
 }
 .banner_lbtn{
 	left: 234px;
@@ -1322,6 +1329,7 @@
 	position: absolute;
 	right: 0;
 	bottom: 0;
+	z-index: 20;
 }
 .banner_xiaodian{
 	width: 6px;
