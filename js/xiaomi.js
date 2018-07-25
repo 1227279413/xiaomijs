@@ -184,7 +184,7 @@ let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
     // let nwidths=296;
     let now=0;
     let next=0;
-    let set=setInterval(move3,1000)
+    let set=setInterval(move3,3000)
 
     let flag=true;
 
@@ -192,7 +192,7 @@ let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
         clearInterval(set)
     }
     nei.onmouseleave=function(){
-        set=setInterval(move3,1000)
+        set=setInterval(move3,3000)
     }
 
     ljian.onclick=function(){
@@ -296,3 +296,52 @@ let nei3=document.getElementsByClassName("nei_xiao3")[0]
 ban(nei3)
 let nei4=document.getElementsByClassName("nei_xiao4")[0]
 ban(nei4)
+
+
+
+
+function star(star1,num) {
+    // let starL=document.querySelector(".shan .star_long")
+    // let btnl=document.querySelector(".shan .star_btn1")
+    // let btnr=document.querySelector(".shan .star_btn2")
+    let starL=star1.getElementsByClassName("star_long")[0]
+    let btnl=star1.getElementsByClassName("star_btn1")[0]
+    let btnr=star1.getElementsByClassName("star_btn2")[0]
+    let swidth=parseInt(getComputedStyle(starL,null).width)/num
+    let times=0;
+    let timess=num-1
+    console.log(btnl);
+    console.log(btnr);
+    console.log(starL);
+    console.log(swidth);
+
+    btnl.onclick=function () {
+        times --;
+        if(times<=0){
+            times=0
+            btnl.classList.remove("star_1")
+            btnr.classList.add("star_1")
+        }
+        if(times>0&&times<timess){
+            btnr.classList.add("star_1")
+        }
+        starL.style.transform=`translateX(${-swidth*times}px)`;
+    }
+    btnr.onclick=function () {
+        times++;
+        if(times>=timess){
+            times=timess
+            btnr.classList.remove("star_1")
+            btnl.classList.add("star_1")
+        }
+        if(times>0&&times<timess){
+            btnl.classList.add("star_1")
+        }
+
+        starL.style.transform=`translateX(${-swidth*times}px)`;
+    }
+}
+let shan=document.getElementsByClassName("shan")[0]
+star(shan,2)
+let tuijian=document.getElementsByClassName("tuijian")[0]
+star(tuijian,4)

@@ -332,8 +332,14 @@
 	width: 316px;
 	height: 170px;
 }
-
+/*明星单品开始*/
 .star{
+	width: 1226px;
+	height: 398px;
+	margin: 0 auto;
+	padding-bottom: 40px;
+}
+.shan{
 	width: 1226px;
 	height: 398px;
 	margin: 0 auto;
@@ -366,25 +372,30 @@
 	text-align: center;
 	float: left;
 	cursor: pointer;
+	font-weight: 400;
 /* 	color: #B0B0B4; */
 }
 .star_btn1{
 	border-right: 1px solid #e0e0e0;
-	color: #E0E0E0;
-	font-weight: 400;
+	color:  #E0E0E0;
 }
 .star_btn2{
-	color: #BEB3B0;
+	color: #E0E0E0;
 }
+.star_1{
+	 color: #BEB3B0;
+ }
 .star_bottom{
 	width: 1226px;
 	height: 340px;
+	/*transition: all 1s;*/
+	overflow: hidden;
 }
 .star_item{
 	width: 234px;
 	height: 300px;
 	border-top: 1px solid #ffac13;
-	background-color: #fff;
+	/*background-color: #fff;*/
 	padding-top: 39px;
 	margin-right: 14px;
 	float: left;
@@ -397,6 +408,11 @@
 	margin: 0 auto;
     display: block;
     cursor:pointer;
+}
+.star_long{
+	width: 2480px;
+	height: 100%;
+	transition: all 1s;
 }
 .star_item h1{
 	text-align: center;
@@ -421,7 +437,7 @@
 	margin-top: 12px;
 }
 .star_item1{
-	margin-right: 0;
+	/*margin-right: 0;*/
 	border-top-color: #00C0A5;
 }
 .star_item2{
@@ -433,12 +449,18 @@
 .star_item4{
 	border-top-color: #E53935;
 }
+/*明星单品结束*/
+
+
+
+
+
+
 .neirong{
 	width: 100%;
 	height: 5268px;
 	background-color: #F5F5F5;
 }
-
 /*家电开始*/
 .jiadian_wenzi{
 	width: 1226px;
@@ -474,14 +496,14 @@
 	color: #FF6700;
 }
 .jiadiann{
-	width: 280px;
+	/*width: 280px;*/
 	height: 58px;
 	/* background-color: pink; */
 	float: right;
 }
-.jiadian-n{
+/*.jiadian-n{
 	width: 320px;
-}
+}*/
 /*.jiadiann:hover .jiadian_di{*/
 	/*padding-bottom: 2px;*/
 	/*border-bottom: 2px solid #F5F5F5;*/
@@ -712,8 +734,9 @@
 /*推荐开始*/
 .tuijian{
 	width: 1226px;
-	height: 300px;
+	height: 402px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .tuijian_xiao{
 	margin-left: 0;
@@ -1394,7 +1417,7 @@
 .xuangou_xiao:hover span{
 	color: #fff;
 }
-.star_btn2:hover{
+.star_1:hover{
 	color: #ff6700;
 }
 .bottom_xiao:hover span{
