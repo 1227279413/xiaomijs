@@ -761,6 +761,11 @@
 	font-weight: 400;
 	margin: 0 25px;
 	cursor:pointer;
+	display: -webkit-box;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:3;
 }
 .reping_xiao h2{
 	font-size: 12px;
@@ -879,6 +884,11 @@
 	height: 40px;
 	color: #B0B0B0;
 	cursor: pointer;
+	display: -webkit-box;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
 }
 .nei_xiao5{
 	height: 21px;

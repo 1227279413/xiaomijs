@@ -199,12 +199,19 @@ let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
         if(flag==false){
             return;
         }
-        
+        if(next==0){
+            return;
+        }
+        move4();
         flag=false;
     }
     rjian.onclick=function(){
         if(flag==false){
             return;
+        }
+
+        if(next==nlis.length-1){
+            return
         }
         move3();
         flag=false;
@@ -219,9 +226,10 @@ let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
 
     for(let i=0;i<ndian.length;i++){
         ndian[i].onclick=function () {
-            for(let j=0;j<ndian.length;j++){
-                ndian[j].classList.remove("nei_da")
-            }
+            // for(let j=0;j<ndian.length;j++){
+            //     ndian[j].classList.remove("nei_da")
+            // }
+            ndian[now].classList.remove("nei_da")
             ndian[i].classList.add("nei_da")
             if(i==now){
                 return;
@@ -246,12 +254,13 @@ let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
 
     function move3() {
         next++;
-        for(let i=0;i<ndian.length;i++){
-            ndian[i].classList.remove("nei_da")
-        }
+        // for(let i=0;i<ndian.length;i++){
+        //     ndian[i].classList.remove("nei_da")
+        // }
         if(next==nlis.length){
             next=0
         }
+        ndian[now].classList.remove("nei_da")
         ndian[next].classList.add("nei_da")
         nlis[next].style.left=nwidths+"px"
         animate(nlis[now],{left:-nwidths});
@@ -262,12 +271,13 @@ let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
     }
     function move4() {
         next--;
-        for(let i=0;i<ndian.length;i++){
-            ndian[i].classList.remove("nei_da")
-        }
+        // for(let i=0;i<ndian.length;i++){
+        //     ndian[i].classList.remove("nei_da")
+        // }
         if(next<0){
             next=nlis.length-1;
         }
+        ndian[now].classList.remove("nei_da")
         ndian[next].classList.add("nei_da")
         nlis[next].style.left=-nwidths+"px"
         animate(nlis[now],{left:nwidths});
