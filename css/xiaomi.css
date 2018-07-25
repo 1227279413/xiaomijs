@@ -803,12 +803,23 @@
 	background-color: #fff;
 	position: relative;
 	transition:all 0.7s linear;
+	overflow: hidden;
+}
+.nei_xiao li{
+	width: 296px;
+	position: absolute;
+	left:296px;
+	top:85px;
+	background-color: #fff;
+	z-index: 20;
 }
 .nei_xiao:hover{
 	transform:translate(0, -2px);
 	box-shadow: 0 0 25px #8c8c8c;
-	
 }
+
+
+
 .nei_xiao1{
 	margin-left: 0;	
 	border-top: 1px solid #FFAC13;
@@ -822,6 +833,9 @@
 .nei_xiao4{
 	border-top: 1px solid #2196F3;
 }
+
+
+
 .nei_xiao1 h1{
 	font-size: 16px;
 	text-align: center;
@@ -893,50 +907,16 @@
 .nei_dian{
 	width: 165px;
 	height: 30px;
+	position: absolute;
+	left:0;
+	right: 0;
+	bottom:10px;
 	margin: 0 auto;
 }
 .neidian{
 	width: 125px;
 	height: 30px;
 	margin: 0 auto;
-}
-.nei_da{
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	border: 2px solid #FF6700;
-	background-color: #B0B0B0;
-	float:left; 
-	margin-right: 15px;
-	margin-left: 15px;
-}
-/* .nei_da1{
-	margin-left: 85px;
-} */
-.nei_jiantou{
-	width: 20px;
-	height: 24px;
-	padding: 12px 0;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	position: absolute;
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 24px;
-	background-color: rgba(0, 0, 0, 0.1);
-	color: #fff;
-	text-align: center;
-	opacity: 0;
-}
-.nei_jiant{
-	right: 0;
-}
-.nei_xiao:hover .nei_jiantou{
-	opacity: 1;
-}
-.nei_jiantou:hover{
-	background-color: rgba(0, 0, 0, 0.6);
 }
 .nei_xiaodian{
 	width: 6px;
@@ -949,6 +929,40 @@
 	margin-left: 15px;
 	cursor:pointer;
 }
+.nei_da{
+	border: 2px solid #FF6700;
+}
+.nei_jiantou{
+	width: 20px;
+	height: 24px;
+	padding: 12px 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 40;
+	position: absolute;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: #fff;
+	text-align: center;
+	opacity: 0;
+	cursor: pointer;
+}
+.nei_jial{
+	left:0;
+}
+.nei_jianr{
+	right: 0;
+}
+.nei_xiao:hover .nei_jiantou{
+	opacity: 1;
+}
+.nei_jiantou:hover{
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
 /*内容模块结束*/
 /*视频开始*/
 .shipin{
