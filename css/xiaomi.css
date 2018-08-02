@@ -339,10 +339,66 @@
 	margin: 0 auto;
 	padding-bottom: 40px;
 }
+.star_dao{
+    padding-top:39px;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 20;
+    background-color: #F1EDED;
+    width: 234px;
+    height: 300px;
+    border-top: 1px solid #ffac13;
+    margin-right: 14px;
+}
+.star_dao img{
+    width: 34px;
+    display: block;
+    height: 54px;
+    margin:25px auto;
+}
+.shan_xiabox{
+    width: 978px;
+    height: 100%;
+    float: right;
+}
+.star_dao h4{
+    color:red;
+    padding-top:15px;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+}
+.star_dao h5{
+    color:#6F6D6D;
+    padding-top:15px;
+    font-size: 18px;
+    line-height: 31px;
+    text-align: center;
+}
+.star_dao ul{
+    width: 102px;
+    display: block;
+    margin:20px auto 0;
+    overflow: hidden;
+}
+.star_dao li{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #605751;
+    color:#fff;
+    float: left;
+}
+.timebox{
+    float: left;
+    margin: 2px 1px 0;
+}
 .shan{
 	width: 1226px;
 	height: 398px;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	padding-bottom: 40px;
 }
 .star_top{
@@ -390,6 +446,7 @@
 	height: 340px;
 	/*transition: all 1s;*/
 	overflow: hidden;
+    position: relative;
 }
 .star_item{
 	width: 234px;

@@ -343,5 +343,53 @@ function star(star1,num) {
 }
 let shan=document.getElementsByClassName("shan")[0]
 star(shan,2)
+let star1=document.getElementsByClassName("star")[0]
+star(star1,2)
 let tuijian=document.getElementsByClassName("tuijian")[0]
 star(tuijian,4)
+
+
+
+move5();
+setInterval(move5,1000)
+function move5() {
+    let newtime = new Date()
+    let liss = document.querySelectorAll(".star_dao li")
+    let sa = newtime.getFullYear();
+    let sb = newtime.getDate()
+    let sc = newtime.getMonth()
+    if (newtime.getHours() >= 18) {
+        sb += 1;
+    }
+    let nexttime = new Date(sa, sc, sb, 18)
+    let cha = Math.floor(nexttime.getTime() / 1000) - Math.floor(newtime.getTime() / 1000)
+    let newh = 0;
+    let newf = 0;
+    let newm = 0;
+    let a = [];
+    hour = Math.floor(cha / (60 * 60))
+    fen = Math.floor(cha % (60 * 60) / 60)
+    miao = Math.floor(cha % 60)
+    if (Math.floor(hour / 10) == 0) {
+        newh = "0" + hour;
+    } else {
+        newh = hour
+    }
+    a.push(newh)
+    if (Math.floor(fen / 10) == 0) {
+        newf = "0" + fen;
+    } else {
+        newf = fen
+    }
+    a.push(newf)
+
+    if (Math.floor(miao / 10) == 0) {
+        newm = "0" + miao;
+    } else {
+        newm = miao
+    }
+    a.push(newm)
+    for (let i = 0; i < liss.length; i++) {
+        liss[i].innerText = a[i]
+    }
+}
