@@ -75,27 +75,86 @@ for (let  i = 0; i <banner.length; i++) {
 
 
     //banner图上
-    let nav=document.getElementById("nav");
-    let spann=nav.getElementsByClassName("nav_wenzi-span")
-    let navHover=nav.getElementsByClassName("nav-hover")
-    for(let i=0;i<spann.length-2;i++){
-        for(let j=0;j<spann.length-2;j++){
-            // navHover[j].style.display="none";
-            navHover[j].style.height="0";
+    let navHover=document.getElementsByClassName("nav-hover")[0]
+    let navh=document.getElementsByClassName("nav-h")[0]
+    let span=navHover.getElementsByClassName("nav_wenzi-span")
+    let navHover2=document.getElementsByClassName("nav-hover2")
+    console.log(span);
+    console.log(navHover2);
+    console.log(navh);
+    navHover.onmouseenter=function () {
+        navh.style.height="228px"
+    }
+    navHover.onmouseleave=function () {
+        navh.style.height=0
+    }
+for(let i=0;i<span.length;i++) {
+    span[i].onmouseenter = function () {
+        navHover2[i].style.display = "block";
+    }
+    span[i].onmouseleave = function () {
+        navHover2[i].style.display = "none";
+    }
+}
+
+
+//input搜索
+    let searchb=document.querySelector(".search")
+    let searchbox=document.querySelector(".search_box")
+    let search1=document.querySelector(".search_1")
+    let searchh1=document.querySelector(".search_1 h1")
+    let searchh2=document.querySelector(".search_1 h2")
+    let searchul=document.querySelector(".search_1 ul")
+
+    function search(){
+        search1.onmouseenter=function () {
+            searchb.style.border="1px solid #B0B0B0";
+            searchbox.style.border="1px solid #B0B0B0";
+            searchb.style.borderRight=0;
         }
-        spann[i].onmouseenter=function () {
-            // navHover[i].style.display="block";
-            navHover[i].style.height="228px";
-            nav.style.borderBottom= "1px solid #e0e0e0";
+        search1.onmouseleave=function () {
+            searchb.style.border="1px solid #e0e0e0";
+            searchbox.style.border="1px solid #e0e0e0";
+            searchb.style.borderRight=0;
         }
-        spann[i].onmouseleave=function () {
-            // navHover[i].style.display="none";
-            navHover[i].style.height="0";
-            nav.style.borderBottom= "1px solid #fff";
+        searchbox.onmouseenter=function () {
+            searchb.style.border="1px solid #B0B0B0";
+            searchbox.style.border="1px solid #ff6700";
+            searchb.style.borderRight=0;
+        }
+        searchbox.onmouseleave=function () {
+            searchbox.style.border="1px solid #B0B0B0";
+            searchb.style.borderRight=0;
         }
     }
+    search()
+    searchb.onfocus=function () {
+        searchul.style.display="block"
+        searchb.style.border="1px solid #ff6700";
+        searchbox.style.border="1px solid #ff6700";
+        searchb.style.borderRight=0;
+        search1.onmouseenter="none"
+        search1.onmouseleave="none"
+        searchbox.onmouseenter="none"
+        searchbox.onmouseleave="none"
+        searchh1.style.display="none"
+        searchh2.style.display="none"
+    }
+    searchb.onblur=function () {
+        searchul.style.display="none"
+        searchb.style.border="1px solid #e0e0e0";
+        searchbox.style.border="1px solid #e0e0e0";
+        searchb.style.borderRight=0;
+        search()
+        searchh1.style.display="block"
+        searchh2.style.display="block"
+    }
 
-    let bannerImg=document.getElementsByClassName("banner_img")[0]
+
+
+
+
+let bannerImg=document.getElementsByClassName("banner_img")[0]
     let ol=bannerImg.getElementsByTagName("img");
     let left=banner.getElementsByClassName("banner_lbtn")[0];
     let right=banner.getElementsByClassName("banner_rbtn")[0];
@@ -180,8 +239,7 @@ function ban(nei) {
     let ndian=nei.getElementsByClassName("nei_xiaodian")
     let ljian=nei.getElementsByClassName("nei_jianl")[0]
     let rjian=nei.getElementsByClassName("nei_jianr")[0]
-let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
-    // let nwidths=296;
+    let nwidths=parseInt(getComputedStyle(nlis[0],null).width)
     let now=0;
     let next=0;
     let set=setInterval(move3,3000)
@@ -310,10 +368,6 @@ function star(star1,num) {
     let swidth=parseInt(getComputedStyle(starL,null).width)/num
     let times=0;
     let timess=num-1
-    console.log(btnl);
-    console.log(btnr);
-    console.log(starL);
-    console.log(swidth);
 
     btnl.onclick=function () {
         times --;
